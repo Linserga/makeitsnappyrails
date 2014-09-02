@@ -1,0 +1,18 @@
+<%= provide(:title, 'Make It Snappy Rails Q&A | Create New User') %>
+<h1>Create New User</h1>
+<%= form_for(@user) do |f| %>
+	<%= render 'common/errors', object: @user %>
+	<div>
+	<%= f.label :username %><br>
+	<%= f.text_field :username %>
+	</div>
+	<div>
+	<%= f.label :password %><br>
+	<%= f.password_field :password %>
+	</div>
+	<div>
+	<%= f.label :password_confirmation, 'Confirm' %><br>
+	<%= f.password_field :password_confirmation %>
+	</div>
+	<%= f.submit 'Register' %> 
+<% end %>

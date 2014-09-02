@@ -1,0 +1,19 @@
+<% provide(:title, 'Make It Snappy Rails | View Question') %>
+<h1><%= @question.user.username.capitalize %> asks:</h1>
+<p><%= @question.body %></p>
+<div id='post-answer'>
+	<% if logged_in? %>
+		<%= render 'answers/answer_form' %>
+	<% else %>
+		<p>Please log in to post an answer for this question</p>
+	<% end %>	
+</div><!--end post-answer-->
+<div if='answers'>
+	<% if @question.answers.any? %>
+		<ul>
+			<%= render @question.answers %>
+		</ul>
+	<% else %>
+		<p>There are no answers to this question</p>
+	<% end %>
+</div>

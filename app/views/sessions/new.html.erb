@@ -1,0 +1,13 @@
+<%= provide(:title, 'Make It Snappy Rails Q&A | Login') %>
+<h1>Login</h1>
+<%= form_for(:session, url: sessions_path) do |f| %>
+	<div>
+		<%= f.label :username %><br>
+		<%= f.text_field :username %>
+	</div>
+	<div>
+		<%= f.label :password %><br>
+		<%= f.password_field :password %>
+	</div>
+		<%= f.submit 'Login' %>
+<% end %>

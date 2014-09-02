@@ -1,0 +1,13 @@
+<% provide(:title, 'Make It Snappy Rails | Edit') %>
+<h1>Edit Question</h1>
+<%= form_for(@question) do |f| %>
+	<%= render 'common/errors', object: @question %>
+
+	<%= f.label :body %>
+	<%= f.text_field :body %>
+	<br>
+	<%= f.label :solved %>	
+	<%= f.check_box :solved %>
+	<br>
+	<%= f.submit 'Update' %>
+<% end %>
